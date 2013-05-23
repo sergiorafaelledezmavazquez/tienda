@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="5d25fabf-2d63-4b28-ab2e-3c8cf8ee07d5">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     tblropa.`id` AS tblropa_id,
+     tblropa.`descripcion` AS tblropa_descripcion,
+     tblropa.`precio` AS tblropa_precio,
+     tblropa.`cantidad` AS tblropa_cantidad,
+     tblropa.`tam` AS tblropa_tam,
+     tblropa.`genero` AS tblropa_genero,
+     tblropa.`color` AS tblropa_color,
+     tblropa.`tipoproducto` AS tblropa_tipoproducto,
+     tblropa.`temporada` AS tblropa_temporada
+FROM
+     `tblropa` tblropa]]>
+	</queryString>
+	<field name="tblropa_id" class="java.lang.Integer"/>
+	<field name="tblropa_descripcion" class="java.lang.String"/>
+	<field name="tblropa_precio" class="java.lang.Double"/>
+	<field name="tblropa_cantidad" class="java.lang.Integer"/>
+	<field name="tblropa_tam" class="java.lang.Integer"/>
+	<field name="tblropa_genero" class="java.lang.String"/>
+	<field name="tblropa_color" class="java.lang.String"/>
+	<field name="tblropa_tipoproducto" class="java.lang.String"/>
+	<field name="tblropa_temporada" class="java.lang.String"/>
+	<group name="tblropa_temporada">
+		<groupExpression><![CDATA[$F{tblropa_temporada}]]></groupExpression>
+	</group>
+	<group name="tblropa_tipoproducto">
+		<groupExpression><![CDATA[$F{tblropa_tipoproducto}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="96849a57-9570-4fe6-aa32-b0f84be48569" x="163" y="25" width="235" height="54"/>
+				<textElement textAlignment="Justified">
+					<font size="36"/>
+				</textElement>
+				<text><![CDATA[PRODUCTOS]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement uuid="80364d66-574b-4efd-98ba-3b7235b0dc70" x="0" y="0" width="36" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{tblropa_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="695e3b6a-6ffb-4bc6-a1a8-ef71904dbd10" x="36" y="0" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{tblropa_descripcion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="166a48a3-a771-4231-8b17-dcdff12f86cb" x="136" y="0" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{tblropa_precio}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="c648758d-9482-4c9a-94bd-0ce7930d939e" x="236" y="0" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{tblropa_cantidad}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="dab7aac9-b7a6-42c6-b6d5-83ec61bcc690" x="336" y="0" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{tblropa_tam}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="bec80488-b023-4703-a164-70cd862ac075" x="436" y="0" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{tblropa_tipoproducto}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
